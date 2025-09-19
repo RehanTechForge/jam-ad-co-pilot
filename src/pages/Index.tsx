@@ -7,6 +7,7 @@ import Demo from '@/components/Demo';
 import Pricing from '@/components/Pricing';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
+import WishlistSection from '@/components/WishlistSection';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
 
@@ -42,6 +43,7 @@ const Index = () => {
       <Pricing onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       <Testimonials />
       <FAQ />
+      <WishlistSection onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       <Footer />
       <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
     </div>
