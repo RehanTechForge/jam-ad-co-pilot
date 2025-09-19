@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="py-16 border-t border-border bg-card/30">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
             <NavLink to="/">
               <div className="flex items-center gap-2 mb-4">
@@ -18,7 +18,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -42,9 +42,9 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -68,22 +68,28 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
-          <div>
+          <div className="flex flex-col">
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="/privacy" className="hover:text-foreground transition-colors">
+                <a
+                  href="/privacy"
+                  className="hover:text-foreground transition-colors"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/terms" className="hover:text-foreground transition-colors">
+                <a
+                  href="/terms"
+                  className="hover:text-foreground transition-colors"
+                >
                   Terms of Service
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="hover:text-foreground transition-colors">
                   Cookie Policy
                 </a>
@@ -92,7 +98,7 @@ const Footer = () => {
                 <a href="#" className="hover:text-foreground transition-colors">
                   GDPR
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

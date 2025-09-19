@@ -9,6 +9,10 @@ import {
   BarChart3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import jamProd1 from "@/assets/back.jpg";
+import jamProd2 from "@/assets/head.jpg";
+import jamProd3 from "@/assets/shoes.jpg";
+import jamProd4 from "@/assets/watch.jpg";
 
 const Demo = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -98,19 +102,46 @@ const Demo = () => {
                         Select Product
                       </h3>
                       <div className="grid grid-cols-2 gap-4">
-                        {[1, 2, 3, 4].map((i) => (
+                        {[
+                          {
+                            name: "Shoes",
+                            price: "$29.99",
+                            img: jamProd3, // White sneakers
+                          },
+                          {
+                            name: "Headphones",
+                            price: "$59.99",
+                            img: jamProd2, // Black headphones
+                          },
+                          {
+                            name: "Backpack",
+                            price: "$39.99",
+                            img: jamProd1, // Travel backpack
+                          },
+                          {
+                            name: "Watch",
+                            price: "$79.99",
+                            img: jamProd4, // Luxury wristwatch
+                          },
+                        ].map((product, i) => (
                           <div
                             key={i}
                             className={`bg-popover rounded-xl p-4 border cursor-pointer transition-all ${
-                              i === 1
+                              i === 0
                                 ? "border-primary"
                                 : "border-border hover:border-primary/50"
                             }`}
                           >
-                            <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg mb-2" />
-                            <p className="text-sm font-medium">Product {i}</p>
+                            <img
+                              src={product.img}
+                              alt={product.name}
+                              className="aspect-square w-full object-cover rounded-lg mb-2"
+                            />
+                            <p className="text-sm font-medium">
+                              {product.name}
+                            </p>
                             <p className="text-xs text-muted-foreground">
-                              $29.99
+                              {product.price}
                             </p>
                           </div>
                         ))}
