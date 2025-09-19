@@ -8,51 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* JAM Brand Colors */
+    --jam-blue: 229 89% 64%;
+    --midnight-navy: 234 23% 14%;
+    --cloud-white: 0 0% 98%;
+    --soft-purple: 250 47% 75%;
+    --lime-green: 97 53% 73%;
+    --warm-coral: 6 100% 70%;
+    
+    /* Semantic Design Tokens */
+    --background: 234 23% 14%;
+    --foreground: 0 0% 98%;
+    
+    --card: 234 23% 18%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 234 23% 20%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 229 89% 64%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 250 47% 75%;
+    --secondary-foreground: 234 23% 14%;
+    
+    --muted: 234 15% 25%;
+    --muted-foreground: 234 10% 60%;
+    
+    --accent: 250 47% 75%;
+    --accent-foreground: 234 23% 14%;
+    
+    --destructive: 6 100% 70%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 97 53% 73%;
+    --success-foreground: 234 23% 14%;
+    
+    --border: 234 15% 25%;
+    --input: 234 23% 22%;
+    --ring: 229 89% 64%;
+    
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(229 89% 64%), hsl(250 47% 75%));
+    --gradient-dark: linear-gradient(180deg, hsl(234 23% 14%), hsl(234 23% 10%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(234 23% 18%), hsl(234 23% 14%));
+    --gradient-glow: radial-gradient(circle at center, hsl(229 89% 64% / 0.2), transparent 70%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(234 23% 10% / 0.1);
+    --shadow-md: 0 4px 16px hsl(234 23% 10% / 0.15);
+    --shadow-lg: 0 8px 32px hsl(234 23% 10% / 0.2);
+    --shadow-glow: 0 0 40px hsl(229 89% 64% / 0.3);
+    
+    /* Animation Timing */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -100,6 +112,66 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-foreground border border-border px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-card hover:border-primary;
+  }
+  
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-glow hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  /* Card Variants */
+  .card-feature {
+    @apply bg-card rounded-2xl p-6 border border-border transition-all duration-300 hover:border-primary hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .card-glow {
+    @apply bg-gradient-to-br from-card to-popover rounded-2xl p-8 border border-primary/20 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/10 before:to-secondary/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300;
+  }
+  
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-hero {
+    @apply bg-gradient-to-br from-foreground via-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  /* Animations */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+  
+  .animate-on-scroll.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-card/20 backdrop-blur-lg border border-border/50;
+  }
+  
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+  }
+  
+  .glow-secondary {
+    box-shadow: 0 0 40px hsl(var(--secondary) / 0.3);
   }
 }
