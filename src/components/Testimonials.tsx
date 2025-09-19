@@ -1,27 +1,30 @@
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: 'Sarah Chen',
-    role: 'Founder, Style Co.',
-    avatar: 'SC',
-    content: 'JAM transformed our ad strategy. We went from spending hours on creatives to launching campaigns in minutes. ROAS increased by 3.8x in just 30 days!',
-    rating: 5
+    name: "Sarah Chen",
+    role: "Founder, Style Co.",
+    avatar: "SC",
+    content:
+      "JAIM transformed our ad strategy. We went from spending hours on creatives to launching campaigns in minutes. ROAS increased by 3.8x in just 30 days!",
+    rating: 5,
   },
   {
-    name: 'Marcus Rodriguez',
-    role: 'CEO, TechGear Plus',
-    avatar: 'MR',
-    content: 'The AI-generated ads are incredible. They actually understand our brand voice and create content that converts. Best marketing investment we\'ve made.',
-    rating: 5
+    name: "Marcus Rodriguez",
+    role: "CEO, TechGear Plus",
+    avatar: "MR",
+    content:
+      "The AI-generated ads are incredible. They actually understand our brand voice and create content that converts. Best marketing investment we've made.",
+    rating: 5,
   },
   {
-    name: 'Emma Thompson',
-    role: 'Marketing Director, BeautyBox',
-    avatar: 'ET',
-    content: 'Finally, a tool that makes social advertising accessible. The trend suggestions alone have doubled our engagement rates. Can\'t imagine working without JAM.',
-    rating: 5
-  }
+    name: "Emma Thompson",
+    role: "Marketing Director, BeautyBox",
+    avatar: "ET",
+    content:
+      "Finally, a tool that makes social advertising accessible. The trend suggestions alone have doubled our engagement rates. Can't imagine working without JAIM.",
+    rating: 5,
+  },
 ];
 
 const Testimonials = () => {
@@ -30,9 +33,12 @@ const Testimonials = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            Loved by <span className="text-gradient">thousands of merchants</span>
+            Loved by{" "}
+            <span className="text-gradient">thousands of merchants</span>
           </h2>
-          <p className="text-xl text-muted-foreground">Join the growing community of successful Shopify stores using JAM</p>
+          <p className="text-xl text-muted-foreground">
+            Join the growing community of successful Shopify stores using JAIM
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -55,7 +61,9 @@ const Testimonials = () => {
                 </div>
                 <div>
                   <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.role}
+                  </p>
                 </div>
               </div>
             </div>

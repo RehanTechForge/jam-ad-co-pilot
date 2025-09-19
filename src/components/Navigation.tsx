@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import jamLogo from '@/assets/jam-logo.png';
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import jamLogo from "@/assets/jam-logo.png";
+import jamLogo1 from "@/assets/logo.png";
+import { NavLink } from "react-router-dom";
 
 const Navigation = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,52 +13,56 @@ const Navigation = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'glass py-4' : 'py-6'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "glass py-4" : "py-6"
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img src={jamLogo} alt="JAM" className="h-10 w-10" />
-            <span className="text-2xl font-bold text-gradient">JAM</span>
-          </div>
+          <NavLink to="/">
+            <div className="flex items-center space-x-2">
+              <img src={jamLogo1} alt="JAIM" className="h-10 w-10" />
+              <span className="text-2xl font-bold text-gradient">JAIM</span>
+            </div>
+          </NavLink>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection('features')}
+              onClick={() => scrollToSection("features")}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               Features
             </button>
             <button
-              onClick={() => scrollToSection('how-it-works')}
+              onClick={() => scrollToSection("how-it-works")}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               How it Works
             </button>
             <button
-              onClick={() => scrollToSection('pricing')}
+              onClick={() => scrollToSection("pricing")}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               Pricing
             </button>
             <button
-              onClick={() => scrollToSection('faq')}
+              onClick={() => scrollToSection("faq")}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               Resources
@@ -87,25 +93,25 @@ const Navigation = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
           <div className="lg:hidden mt-6 pb-6 border-t border-border pt-6 animate-fade-in">
             <div className="flex flex-col space-y-4">
               <button
-                onClick={() => scrollToSection('features')}
+                onClick={() => scrollToSection("features")}
                 className="text-foreground/80 hover:text-foreground transition-colors text-left"
               >
                 Features
               </button>
               <button
-                onClick={() => scrollToSection('how-it-works')}
+                onClick={() => scrollToSection("how-it-works")}
                 className="text-foreground/80 hover:text-foreground transition-colors text-left"
               >
                 How it Works
               </button>
               <button
-                onClick={() => scrollToSection('pricing')}
+                onClick={() => scrollToSection("pricing")}
                 className="text-foreground/80 hover:text-foreground transition-colors text-left"
               >
                 Pricing
               </button>
               <button
-                onClick={() => scrollToSection('faq')}
+                onClick={() => scrollToSection("faq")}
                 className="text-foreground/80 hover:text-foreground transition-colors text-left"
               >
                 Resources
