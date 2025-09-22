@@ -9,10 +9,10 @@ import {
   BarChart3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import jamProd1 from "@/assets/back.jpg";
-import jamProd2 from "@/assets/head.jpg";
-import jamProd3 from "@/assets/shoes.jpg";
-import jamProd4 from "@/assets/watch.jpg";
+import genericBackpack from "@/assets/generic-backpack.jpg";
+import genericHeadphones from "@/assets/generic-headphones.jpg";
+import genericShoes from "@/assets/generic-shoes.jpg";
+import genericWatch from "@/assets/generic-watch.jpg";
 
 const Demo = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -104,24 +104,24 @@ const Demo = () => {
                       <div className="grid grid-cols-2 gap-4">
                         {[
                           {
-                            name: "Shoes",
+                            name: "Athletic Shoes",
                             price: "$29.99",
-                            img: jamProd3, // White sneakers
+                            img: genericShoes,
                           },
                           {
                             name: "Headphones",
                             price: "$59.99",
-                            img: jamProd2, // Black headphones
+                            img: genericHeadphones,
                           },
                           {
                             name: "Backpack",
                             price: "$39.99",
-                            img: jamProd1, // Travel backpack
+                            img: genericBackpack,
                           },
                           {
                             name: "Watch",
                             price: "$79.99",
-                            img: jamProd4, // Luxury wristwatch
+                            img: genericWatch,
                           },
                         ].map((product, i) => (
                           <div

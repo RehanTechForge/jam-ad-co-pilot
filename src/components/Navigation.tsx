@@ -5,7 +5,7 @@ import jamLogo from "@/assets/jam-logo.png";
 import jamLogo1 from "@/assets/logo.png";
 import { NavLink } from "react-router-dom";
 
-const Navigation = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
+const Navigation = ({ onOpenWaitlist, onScheduleDemo }: { onOpenWaitlist: () => void; onScheduleDemo?: () => void }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -67,9 +67,9 @@ const Navigation = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
             >
               Resources
             </button>
-            <button className="text-foreground/80 hover:text-foreground transition-colors">
-              Sign in
-            </button>
+            <a href="/contact" className="text-foreground/80 hover:text-foreground transition-colors">
+              Contact
+            </a>
             <Button
               onClick={onOpenWaitlist}
               className="bg-primary text-primary-foreground hover:opacity-90 transition-all duration-200 hover:scale-[1.02]"
@@ -116,9 +116,9 @@ const Navigation = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
               >
                 Resources
               </button>
-              <button className="text-foreground/80 hover:text-foreground transition-colors text-left">
-                Sign in
-              </button>
+              <a href="/contact" className="text-foreground/80 hover:text-foreground transition-colors text-left">
+                Contact
+              </a>
               <Button
                 onClick={onOpenWaitlist}
                 className="bg-primary text-primary-foreground hover:opacity-90 w-full mt-4"

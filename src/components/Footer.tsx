@@ -89,6 +89,14 @@ const Footer = () => {
                   Terms of Service
                 </a>
               </li>
+              <li>
+                <a
+                  href="/contact"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Contact / Support
+                </a>
+              </li>
               {/* <li>
                 <a href="#" className="hover:text-foreground transition-colors">
                   Cookie Policy

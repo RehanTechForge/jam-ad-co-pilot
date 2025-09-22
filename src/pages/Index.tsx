@@ -10,9 +10,11 @@ import FAQ from '@/components/FAQ';
 import WishlistSection from '@/components/WishlistSection';
 import Footer from '@/components/Footer';
 import WaitlistModal from '@/components/WaitlistModal';
+import SchedulingModal from '@/components/SchedulingModal';
 
 const Index = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const [isSchedulingOpen, setIsSchedulingOpen] = useState(false);
 
   useEffect(() => {
     // Initialize scroll animations
@@ -35,8 +37,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation onOpenWaitlist={() => setIsWaitlistOpen(true)} />
-      <Hero onOpenWaitlist={() => setIsWaitlistOpen(true)} />
+      <Navigation onOpenWaitlist={() => setIsWaitlistOpen(true)} onScheduleDemo={() => setIsSchedulingOpen(true)} />
+      <Hero onOpenWaitlist={() => setIsWaitlistOpen(true)} onScheduleDemo={() => setIsSchedulingOpen(true)} />
       <Features />
       <HowItWorks />
       <Demo />
@@ -46,6 +48,7 @@ const Index = () => {
       <WishlistSection onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       <Footer />
       <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
+      <SchedulingModal isOpen={isSchedulingOpen} onClose={() => setIsSchedulingOpen(false)} />
     </div>
   );
 };
