@@ -1,59 +1,59 @@
-import { Check, Sparkles, Zap, Crown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Check, Sparkles, Zap, Crown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const plans = [
   {
-    name: 'Starter',
-    price: 'Free Trial',
-    description: '7 days to test everything',
+    name: "Starter",
+    price: "Free Trial",
+    description: "7 days to test everything",
     icon: Sparkles,
     features: [
-      '10 AI-generated ads',
-      '1 Shopify store',
-      'Basic analytics',
-      'Email support',
-      'Standard templates'
+      "10 AI-generated ads",
+      "1 Shopify store",
+      "Basic analytics",
+      "Email support",
+      "Standard templates",
     ],
-    cta: 'Start Free Trial',
-    popular: false
+    cta: "Start Free Trial",
+    popular: false,
   },
   {
-    name: 'Growth',
-    price: '$99',
-    period: '/month',
-    description: 'Perfect for scaling stores',
+    name: "Growth",
+    price: "$99",
+    period: "/month",
+    description: "Perfect for scaling stores",
     icon: Zap,
     features: [
-      'Unlimited AI ads',
-      '1 Shopify store',
-      'Advanced analytics',
-      'Priority support',
-      'Custom templates',
-      'UGC creator network',
-      'Trend suggestions',
-      'A/B testing'
+      "Unlimited AI ads",
+      "1 Shopify store",
+      "Advanced analytics",
+      "Priority support",
+      "Custom templates",
+      "UGC creator network",
+      "Trend suggestions",
+      "A/B testing",
     ],
-    cta: 'Get Started',
-    popular: true
+    cta: "Get Started",
+    popular: true,
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    description: 'For high-volume merchants',
+    name: "Enterprise",
+    price: "Custom",
+    description: "For high-volume merchants",
     icon: Crown,
     features: [
-      'Everything in Growth',
-      'Multiple stores',
-      'Dedicated account manager',
-      'Custom integrations',
-      'White-label options',
-      'Advanced API access',
-      'Training & onboarding',
-      'SLA guarantee'
+      "Everything in Growth",
+      "Multiple stores",
+      "Dedicated account manager",
+      "Custom integrations",
+      "White-label options",
+      "Advanced API access",
+      "Training & onboarding",
+      "SLA guarantee",
     ],
-    cta: 'Contact Sales',
-    popular: false
-  }
+    cta: "Contact Sales",
+    popular: false,
+  },
 ];
 
 const Pricing = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
@@ -64,15 +64,18 @@ const Pricing = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
         <div className="text-center mb-16 animate-on-scroll">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 border border-success/20 mb-6">
             <Sparkles className="h-4 w-4 text-success" />
-            <span className="text-sm text-success">Early access: 1 month free + priority onboarding</span>
+            <span className="text-sm text-success">
+              Early access: 1 month free + priority onboarding
+            </span>
           </div>
-          
+
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            Simple pricing that{' '}
+            Simple pricing that{" "}
             <span className="text-gradient">scales with you</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Start free, upgrade when you're ready. No hidden fees, cancel anytime.
+            Start free, upgrade when you're ready. No hidden fees, cancel
+            anytime.
           </p>
         </div>
 
@@ -84,7 +87,7 @@ const Pricing = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
               <div
                 key={index}
                 className={`relative animate-on-scroll ${
-                  plan.popular ? 'lg:-mt-8' : ''
+                  plan.popular ? "lg:-mt-8" : ""
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -95,25 +98,39 @@ const Pricing = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
                     </span>
                   </div>
                 )}
-                
-                <div className={`h-full bg-card rounded-2xl p-8 border ${
-                  plan.popular ? 'border-primary shadow-glow' : 'border-border'
-                } hover:border-primary/50 transition-all duration-300`}>
+
+                <div
+                  className={`h-full bg-card rounded-2xl p-8 border ${
+                    plan.popular
+                      ? "border-primary shadow-glow"
+                      : "border-border"
+                  } hover:border-primary/50 transition-all duration-300`}
+                >
                   {/* Plan Icon */}
-                  <div className={`inline-flex p-3 rounded-xl mb-4 ${
-                    plan.popular ? 'bg-primary/10 border border-primary/20 text-primary' : 'bg-muted text-muted-foreground'
-                  }`}>
+                  <div
+                    className={`inline-flex p-3 rounded-xl mb-4 ${
+                      plan.popular
+                        ? "bg-primary/10 border border-primary/20 text-primary"
+                        : "bg-muted text-muted-foreground"
+                    }`}
+                  >
                     <Icon className="h-6 w-6" />
                   </div>
-                  
+
                   {/* Plan Name & Price */}
                   <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                   <div className="mb-4">
                     <span className="text-4xl font-bold">{plan.price}</span>
-                    {plan.period && <span className="text-muted-foreground">{plan.period}</span>}
+                    {plan.period && (
+                      <span className="text-muted-foreground">
+                        {plan.period}
+                      </span>
+                    )}
                   </div>
-                  <p className="text-muted-foreground mb-6">{plan.description}</p>
-                  
+                  <p className="text-muted-foreground mb-6">
+                    {plan.description}
+                  </p>
+
                   {/* Features */}
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, i) => (
@@ -123,14 +140,14 @@ const Pricing = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
                       </li>
                     ))}
                   </ul>
-                  
+
                   {/* CTA Button */}
                   <Button
                     onClick={onOpenWaitlist}
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-primary text-primary-foreground hover:opacity-90'
-                        : 'bg-transparent border border-border hover:bg-card'
+                        ? "bg-primary text-primary-foreground hover:opacity-90"
+                        : "bg-transparent border border-border hover:bg-card"
                     }`}
                   >
                     {plan.cta}
@@ -147,7 +164,10 @@ const Pricing = ({ onOpenWaitlist }: { onOpenWaitlist: () => void }) => {
             All plans include: SSL security, GDPR compliance, 99.9% uptime
           </p>
           <p className="text-sm text-muted-foreground">
-            Questions? <button className="text-primary hover:underline">Chat with our team</button>
+            Questions?{" "}
+            <a href="/contact" className="text-primary hover:underline">
+              Chat with our team
+            </a>
           </p>
         </div>
       </div>

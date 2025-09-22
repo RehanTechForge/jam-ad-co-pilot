@@ -2,7 +2,13 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, PlayCircle, Sparkles } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
 
-const Hero = ({ onOpenWaitlist, onScheduleDemo }: { onOpenWaitlist: () => void; onScheduleDemo?: () => void }) => {
+const Hero = ({
+  onOpenWaitlist,
+  onScheduleDemo,
+}: {
+  onOpenWaitlist: () => void;
+  onScheduleDemo?: () => void;
+}) => {
   const scrollToDemo = () => {
     const element = document.getElementById("demo");
     if (element) {
@@ -50,7 +56,7 @@ const Hero = ({ onOpenWaitlist, onScheduleDemo }: { onOpenWaitlist: () => void; 
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
 
-              <Button
+              {/* <Button
                 onClick={scrollToDemo}
                 variant="outline"
                 size="lg"
@@ -58,7 +64,7 @@ const Hero = ({ onOpenWaitlist, onScheduleDemo }: { onOpenWaitlist: () => void; 
               >
                 <PlayCircle className="mr-2 h-5 w-5" />
                 Watch Demo
-              </Button>
+              </Button> */}
             </div>
 
             {/* Trust Row */}
