@@ -90,7 +90,7 @@ const Contact = () => {
                     href="mailto:support@jaim.marketing"
                     className="text-sm text-primary hover:underline"
                   >
-                    support@jaim.marketing
+                    chris@jaimads.com
                   </a>
                 </div>
 

@@ -208,7 +208,7 @@ const Terms = () => {
             <ul className="text-sm space-y-1 text-muted-foreground">
               <li>
                 ✓ Replace all placeholder values (JAIM,
-                developers@qfnetwork.org, etc.)
+                chris@jaimads.com, etc.)
               </li>
               <li>
                 ✓ Review subscription pricing and refund policy for your

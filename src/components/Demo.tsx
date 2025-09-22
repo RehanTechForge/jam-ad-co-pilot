@@ -721,7 +721,7 @@ const Demo = () => {
         </div>
 
         {/* Live Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
+        {/* <div className="grid md:grid-cols-3 gap-6 mt-12">
           <div className="text-center animate-on-scroll">
             <div className="text-3xl font-bold text-primary mb-2">2.5M+</div>
             <p className="text-muted-foreground">Ads Generated</p>
@@ -740,7 +740,7 @@ const Demo = () => {
             <div className="text-3xl font-bold text-success mb-2">89%</div>
             <p className="text-muted-foreground">Time Saved</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

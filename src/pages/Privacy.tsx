@@ -84,7 +84,7 @@ const Privacy = () => {
               <UserCheck className="h-5 w-5 text-primary mb-2" />
               <h3 className="font-semibold text-sm mb-1">Request Your Data</h3>
               <p className="text-xs text-muted-foreground">
-                Email: developers@qfnetwork.org
+                Email: chris@jaimads.com
               </p>
             </Card>
             <Card className="p-4 hover:border-primary transition-colors cursor-pointer">
@@ -127,7 +127,7 @@ const Privacy = () => {
                       <strong>Data Controller</strong>
                     </p>
                     <p>Company: JAIM</p>
-                    <p>Email: developers@qfnetwork.org</p>
+                    <p>Email: chris@jaimads.com</p>
                   </div>
                 </section>
 
@@ -222,7 +222,7 @@ const Privacy = () => {
                   </h2>
                   <div className="bg-muted/50 border rounded-lg p-4">
                     <p>
-                      <strong>Email:</strong> developers@qfnetwork.org
+                      <strong>Email:</strong> chris@jaimads.com
                     </p>
                     <p>
                       <strong>Mail:</strong> JAIM, Attn: Privacy Team
@@ -298,7 +298,7 @@ const Privacy = () => {
             <ul className="text-sm space-y-1 text-muted-foreground">
               <li>
                 ✓ Replace all placeholder values (JAIM,
-                developers@qfnetwork.org, etc.)
+                chris@jaimads.com, etc.)
               </li>
               <li>✓ Confirm data storage locations and cloud providers</li>
               <li>✓ Review retention periods with legal counsel</li>
