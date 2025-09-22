@@ -15,53 +15,55 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields");
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([{
+      const { error } = await supabase.from("contact_submissions").insert([
+        {
           name: formData.name,
           email: formData.email,
-          subject: formData.subject || 'General Inquiry',
-          message: formData.message
-        }]);
+          subject: formData.subject || "General Inquiry",
+          message: formData.message,
+        },
+      ]);
 
       if (error) throw error;
 
       toast.success("Message sent! We'll get back to you within 24 hours.");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      console.error('Error submitting contact form:', error);
+      console.error("Error submitting contact form:", error);
       toast.error("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation onOpenWaitlist={() => setIsWaitlistOpen(true)} />
-      
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
@@ -84,7 +86,10 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     Get help with technical issues or account questions
                   </p>
-                  <a href="mailto:support@jaim.marketing" className="text-sm text-primary hover:underline">
+                  <a
+                    href="mailto:support@jaim.marketing"
+                    className="text-sm text-primary hover:underline"
+                  >
                     support@jaim.marketing
                   </a>
                 </div>
@@ -95,9 +100,9 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     Available Mon-Fri, 9am-6pm EST
                   </p>
-                  <Button variant="outline" size="sm" className="w-full">
+                  {/* <Button variant="outline" size="sm" className="w-full">
                     Start Chat
-                  </Button>
+                  </Button> */}
                 </div>
 
                 <div className="bg-card rounded-xl p-6 border border-border">
@@ -106,21 +111,26 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mb-3">
                     Book a demo or discuss enterprise plans
                   </p>
-                  <Button variant="outline" size="sm" className="w-full">
+                  {/* <Button variant="outline" size="sm" className="w-full">
                     Book Time
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
 
               {/* Contact Form */}
               <div className="lg:col-span-2">
                 <div className="bg-card rounded-xl p-8 border border-border">
-                  <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
-                  
+                  <h2 className="text-2xl font-semibold mb-6">
+                    Send us a Message
+                  </h2>
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-medium mb-2"
+                        >
                           Name *
                         </label>
                         <Input
@@ -132,9 +142,12 @@ const Contact = () => {
                           required
                         />
                       </div>
-                      
+
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium mb-2"
+                        >
                           Email *
                         </label>
                         <Input
@@ -150,7 +163,10 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Subject
                       </label>
                       <Input
@@ -163,7 +179,10 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium mb-2"
+                      >
                         Message *
                       </label>
                       <Textarea
@@ -200,7 +219,7 @@ const Contact = () => {
               </p>
               <Button
                 variant="outline"
-                onClick={() => window.location.href = "/#faq"}
+                onClick={() => (window.location.href = "/#faq")}
               >
                 View FAQ
               </Button>
@@ -210,7 +229,10 @@ const Contact = () => {
       </main>
 
       <Footer />
-      <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
+      <WaitlistModal
+        isOpen={isWaitlistOpen}
+        onClose={() => setIsWaitlistOpen(false)}
+      />
     </div>
   );
 };

@@ -66,9 +66,9 @@ const FAQ = () => {
 
         <div className="text-center mt-12 animate-on-scroll">
           <p className="text-muted-foreground mb-4">Still have questions?</p>
-          <button className="text-primary hover:underline">
+          <a href="/contact" className="text-primary hover:underline">
             Contact our support team →
-          </button>
+          </a>
         </div>
       </div>
     </section>
