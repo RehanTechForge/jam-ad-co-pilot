@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WaitlistModal from "@/components/WaitlistModal";
 import { Mail, MessageSquare, Phone, MapPin } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
@@ -28,12 +29,26 @@ const Contact = () => {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([{
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || 'General Inquiry',
+          message: formData.message
+        }]);
+
+      if (error) throw error;
+
       toast.success("Message sent! We'll get back to you within 24 hours.");
       setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

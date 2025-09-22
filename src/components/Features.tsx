@@ -109,9 +109,6 @@ const Features = () => {
                   <span className={`text-sm font-medium ${feature.color === 'primary' ? 'text-primary' : feature.color === 'secondary' ? 'text-secondary' : 'text-success'}`}>
                     {feature.metric}
                   </span>
-                  <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    Learn more →
-                  </button>
                 </div>
               </div>
             );
