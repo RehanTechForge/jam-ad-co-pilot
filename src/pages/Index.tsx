@@ -11,6 +11,7 @@ import WishlistSection from "@/components/WishlistSection";
 import Footer from "@/components/Footer";
 import WaitlistModal from "@/components/WaitlistModal";
 import SchedulingModal from "@/components/SchedulingModal";
+import Demo from "@/components/Demo";
 
 const Index = () => {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
@@ -47,6 +48,7 @@ const Index = () => {
       />
       <Features />
       <HowItWorks />
+      <Demo />
       <TrustSignals />
       <Pricing onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       {/* <Testimonials /> */}
