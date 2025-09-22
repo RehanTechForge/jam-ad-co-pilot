@@ -6,34 +6,42 @@ const TrustSignals = () => {
     {
       icon: Shield,
       title: "Secure & Reliable",
-      description: "Industry-standard encryption and data protection for all your marketing data",
-      metric: "SOC 2 Compliant"
+      description:
+        "Industry-standard encryption and data protection for all your marketing data",
+      metric: "SOC 2 Compliant",
     },
-    {
-      icon: Award,
-      title: "Trusted by Brands",
-      description: "Join thousands of successful e-commerce brands growing with JAIM",
-      metric: "5,000+ Active Users"
-    },
+    // {
+    //   icon: Award,
+    //   title: "Trusted by Brands",
+    //   description:
+    //     "Join thousands of successful e-commerce brands growing with JAIM",
+    //   metric: "5,00+ Active Users",
+    // },
     {
       icon: Star,
       title: "Proven Results",
       description: "Average 3.8x return on ad spend for our customers",
-      metric: "3.8x Average ROAS"
+      metric: "3.8x Average ROAS",
     },
     {
       icon: CheckCircle,
       title: "Official Partner",
       description: "Verified partner of Shopify, Meta, and TikTok for Ads",
-      metric: "Triple Certified"
-    }
+      metric: "Triple Certified",
+    },
   ];
 
+  // const stats = [
+  //   { value: "$50M+", label: "Revenue Generated" },
+  //   { value: "10M+", label: "Ads Created" },
+  //   { value: "99.9%", label: "Uptime" },
+  //   { value: "24/7", label: "Support" }
+  // ];
   const stats = [
-    { value: "$50M+", label: "Revenue Generated" },
-    { value: "10M+", label: "Ads Created" },
-    { value: "99.9%", label: "Uptime" },
-    { value: "24/7", label: "Support" }
+    { value: "99.9%", label: "Platform Uptime" },
+    { value: "24/7", label: "Customer Support" },
+    // { value: "5,00+", label: "Active Users" },
+    { value: "3.8x", label: "Avg. ROAS" },
   ];
 
   return (
@@ -45,12 +53,13 @@ const TrustSignals = () => {
             Why Brands Trust <span className="text-gradient">JAIM</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of successful brands that rely on JAIM to power their social commerce growth
+            Join thousands of successful brands that rely on JAIM to power their
+            social commerce growth
           </p>
         </div>
 
         {/* Achievement Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {achievements.map((achievement, index) => {
             const Icon = achievement.icon;
             return (
@@ -62,9 +71,15 @@ const TrustSignals = () => {
                 <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <Icon className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{achievement.title}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{achievement.description}</p>
-                <div className="text-primary font-bold">{achievement.metric}</div>
+                <h3 className="text-lg font-semibold mb-2">
+                  {achievement.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  {achievement.description}
+                </p>
+                <div className="text-primary font-bold">
+                  {achievement.metric}
+                </div>
               </Card>
             );
           })}
@@ -72,7 +87,7 @@ const TrustSignals = () => {
 
         {/* Stats Bar */}
         <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-3xl p-8 lg:p-12 animate-on-scroll">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold text-gradient mb-2">
@@ -86,16 +101,24 @@ const TrustSignals = () => {
 
         {/* Trust Badges */}
         <div className="mt-16 text-center animate-on-scroll">
-          <p className="text-sm text-muted-foreground mb-6">Certified and Verified by</p>
+          <p className="text-sm text-muted-foreground mb-6">
+            Certified and Verified by
+          </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="bg-card px-6 py-3 rounded-lg border border-border">
-              <span className="font-semibold text-foreground">Shopify Partner</span>
+              <span className="font-semibold text-foreground">
+                Shopify Partner
+              </span>
             </div>
             <div className="bg-card px-6 py-3 rounded-lg border border-border">
-              <span className="font-semibold text-foreground">Meta Business Partner</span>
+              <span className="font-semibold text-foreground">
+                Meta Business Partner
+              </span>
             </div>
             <div className="bg-card px-6 py-3 rounded-lg border border-border">
-              <span className="font-semibold text-foreground">TikTok Marketing Partner</span>
+              <span className="font-semibold text-foreground">
+                TikTok Marketing Partner
+              </span>
             </div>
           </div>
         </div>

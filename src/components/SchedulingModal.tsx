@@ -14,11 +14,11 @@ const SchedulingModal = ({ isOpen, onClose }: SchedulingModalProps) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const availableDates = [
-    { date: "2024-01-15", day: "Mon", label: "Jan 15" },
-    { date: "2024-01-16", day: "Tue", label: "Jan 16" },
-    { date: "2024-01-17", day: "Wed", label: "Jan 17" },
-    { date: "2024-01-18", day: "Thu", label: "Jan 18" },
-    { date: "2024-01-19", day: "Fri", label: "Jan 19" },
+    { date: "2026-01-15", day: "Mon", label: "Jan 15" },
+    { date: "2026-01-16", day: "Tue", label: "Jan 16" },
+    { date: "2026-01-17", day: "Wed", label: "Jan 17" },
+    { date: "2026-01-18", day: "Thu", label: "Jan 18" },
+    { date: "2026-01-19", day: "Fri", label: "Jan 19" },
   ];
 
   const availableTimes = [

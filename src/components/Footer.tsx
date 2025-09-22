@@ -113,7 +113,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p>
-            © 2024 JAIM. Built for Shopify merchants. JAIM uses OAuth and never
+            © 2026 JAIM. Built for Shopify merchants. JAIM uses OAuth and never
             stores full payment data.
           </p>
         </div>

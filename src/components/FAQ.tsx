@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Which platforms does JAIM support?",
     answer:
-      "JAIM currently integrates with Shopify, Meta (Facebook & Instagram), and TikTok. We're adding Google Ads and Pinterest in Q2 2024.",
+      "JAIM currently integrates with Shopify, Meta (Facebook & Instagram), and TikTok. We're adding Google Ads and Pinterest in Q2 2026.",
   },
   {
     question: "Can I cancel anytime?",
